@@ -10,5 +10,7 @@ public interface RepositoryI {
 	public abstract void printAllMedia();
 
 	public abstract void addBook(Book book);
+	
+	public abstract void exportData();
 
 }

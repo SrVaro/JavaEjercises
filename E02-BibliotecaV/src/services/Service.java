@@ -38,5 +38,9 @@ public class Service {
 	public static void printAllMediaDiff() {
 		r.printAllMediaDiff();
 	}
+	
+	public static void exportData() {
+		r.exportData();
+	}
 
 }

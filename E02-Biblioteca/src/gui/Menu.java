@@ -1,9 +1,6 @@
 package gui;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import model.Book;
 import model.Disk;
 import model.Format;
@@ -32,7 +29,7 @@ public class Menu {
 		title = Writer.readString();
 
 		date = Writer.readDate();
-		
+
 		System.out.println("Escribe la edicion del libro:");
 		edition = Writer.readString();
 
