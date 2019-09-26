@@ -4,11 +4,9 @@ public class UI {
 
 	public static void showMenu() {
 		separationMsg();
-		System.out.println("¿Que quieres hacer?\n\n" + "1)Añadir un libro a la biblioteca\n" + "2)Añadir un disco\n"
-				+ "3)Numero de libros prestados\n" + "4)Publicaciones anteriores a (fecha a elegir)\n"
-				+ "5)Listado de publicaciones y discos\n"
-				+ "6)Listado de publicaciones y discos diferenciando prestados\n"
-				+ "7)Exportar datos a un archivo de texto");
+		System.out.println("¿Que quieres hacer?\n\n" + "1)Dar de alta un producto\n" + "2)Eliminar un producto\n"
+				+ "3)Listar los productos existentes\n" + "4)Existencias de un producto\n"
+				+ "5)Listar los productos con menos de 5 unidades\n");
 		separationMsg();
 	}
 

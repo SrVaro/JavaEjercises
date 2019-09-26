@@ -1,6 +1,7 @@
 package control;
 
 import gui.UI;
+import model.ProductFactory;
 import services.Service;
 import utility.Writer;
 
@@ -8,7 +9,7 @@ public class Controller {
 
 	public static void startProgram() {
 
-		// Service.fillWithData();
+		Service.fillWithData();
 
 		UI.showMenu();
 
@@ -18,18 +19,20 @@ public class Controller {
 
 			switch (n) {
 			case 1:
+				Service.addProduct(ProductFactory.readProduct());
 				break;
 			case 2:
+				Service.deleteProduct(Writer.readInt());
 				break;
 			case 3:
+				Service.listProducts();
 				break;
 			case 4:
+				Service.listProductsName();
+				Service.getStock(Writer.readInt());
 				break;
 			case 5:
-				break;
-			case 6:
-				break;
-			case 7:
+				Service.getProductsMinItems();
 				break;
 			}
 
