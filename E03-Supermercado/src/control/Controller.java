@@ -1,7 +1,6 @@
 package control;
 
 import gui.UI;
-import model.ProductFactory;
 import services.Service;
 import utility.Writer;
 
@@ -19,17 +18,17 @@ public class Controller {
 
 			switch (n) {
 			case 1:
-				Service.addProduct(ProductFactory.readProduct());
+				Service.addProduct();
 				break;
 			case 2:
-				Service.deleteProduct(Writer.readInt());
+				Service.deleteProduct();
 				break;
 			case 3:
 				Service.listProducts();
 				break;
 			case 4:
 				Service.listProductsName();
-				Service.getStock(Writer.readInt());
+				Service.getStock();
 				break;
 			case 5:
 				Service.getProductsMinItems();

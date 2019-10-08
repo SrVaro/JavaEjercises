@@ -1,7 +1,6 @@
 package control;
 
 import gui.UI;
-import model.MediaFactory;
 import services.Service;
 import utility.Writer;
 
@@ -19,16 +18,16 @@ public class Controller {
 
 			switch (n) {
 			case 1:
-				Service.addBook(MediaFactory.readBook());
+				Service.addBook();
 				break;
 			case 2:
-				Service.addDisk(MediaFactory.readDisk());
+				Service.addDisk();
 				break;
 			case 3:
 				Service.bookBorroweds();
 				break;
 			case 4:
-				Service.publicationsBefore(Writer.readDate());
+				Service.publicationsBefore();
 				break;
 			case 5:
 				Service.printAllMedia();

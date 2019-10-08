@@ -1,11 +1,12 @@
 package services;
 
-import java.util.Date;
+
 
 import data.RepositoryImp;
-import model.Book;
-import model.Disk;
+import gui.Menu;
+
 import test.DataTest;
+import utility.Writer;
 
 public class Service {
 
@@ -15,12 +16,12 @@ public class Service {
 		DataTest.test(r);
 	}
 
-	public static void addBook(Book book) {
-		r.addBook(book);
+	public static void addBook() {
+		r.addBook(Menu.readBook());
 	}
 	
-	public static void addDisk(Disk disk) {
-		r.addDisk(disk);
+	public static void addDisk() {
+		r.addDisk(Menu.readDisk());
 	}
 	
 	public static void printAllMedia() {
@@ -31,8 +32,8 @@ public class Service {
 		r.bookBorroweds();
 	}
 	
-	public static void publicationsBefore(Date date) {
-		r.publicationsBefore(date);
+	public static void publicationsBefore() {
+		r.publicationsBefore(Writer.readDate());
 	}
 	
 	public static void printAllMediaDiff() {

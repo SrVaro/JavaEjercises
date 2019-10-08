@@ -1,0 +1,114 @@
+﻿Ejemplo sacado de 
+https://spring.io/guides/gs/testing-web/
+
+==========================
+Para Ideas de pruebas
+https://www.logicbig.com/how-to/code-snippets/jcode-spring-mvc-junit-test.html
+https://github.com/MWhyte/spring-security-basic/blob/master/src/test/java/com/codenerve/spring/sec/ApplicationTests.java
+============================
+
+Info
+https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/html/boot-features-testing.html
+
+1) Ejecutar ApplicationStart() --> levanta Tomcat
+2) Ejecutar cada ejemplo mediante 
+      bt dcho > Run As > Junit Test
+      
+      
+
+========
+EJEMPLOS
+======== 
+
+1) ApplicationTest01_contextloadApplication
+   Prueba Básica
+   
+2) ApplicationTest02_autowired
+   Comprobar si inyecta algo
+   
+3) ApplicationTest03_HttpRequest
+   Asegura que ha llegado info HTTP
+   
+4) ApplicationTest04_ownServer
+   Igual que el 03 pero sin iniciar el server. Uso un mock. Ver salida
+   
+5) ApplicationTest05_webLayer
+   Test para la capa Web layer sin arrancar servidor
+   ---> es el mismo. He juntado el 4 y el 5
+   
+6) ApplicationTest06_WebMock
+   Complicando el controller
+         
+      
+
+The org.springframework.test.util package contains several general purpose utilities for use in unit and integration testing.
+
+
+La dependencia empleada es   spring-boot-starter-test  e incluye (mediante SringBoot)
+
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+
+  <groupId>org.assertj</groupId>
+  <artifactId>assertj-core</artifactId>
+
+  <groupId>org.mockito</groupId>
+  <artifactId>mockito-core</artifactId>
+
+  <groupId>org.hamcrest</groupId>
+  <artifactId>hamcrest-core</artifactId>
+
+  <groupId>org.hamcrest</groupId>
+  <artifactId>hamcrest-library</artifactId>
+
+  <groupId>org.skyscreamer</groupId>
+  <artifactId>jsonassert</artifactId>
+
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-test</artifactId>
+
+
+=============================
+Parametros especficos apra pruebas
+==================================
+
+Si queremos parametros especficicos para las pruebas (Ej otra BBDD) hay que Duplicar en el 
+directorio /src/test/resources los ficheros de /src/main/resources y modificarlos con los 
+parámetros para los tests. Esto incluye el application.properties.
+
+Es posible crear ficheros de propiedades completamente nuevos que sobrescriban sólo los parámetros 
+que cambian para los tests, e indicar estos ficheros en el test con la anotación 
+@TestPropertySource.
+
+Se pueden modificar valores de forma específica sólo para una clase de test con el atributo 
+properties o values de @SpringBootTest.
+@SpringBootTest(properties = "spring.datasource.url=jdbc:mysql://localhost:3306/country-test")
+
+   
+   
+=========================================
+Truco para usar una BBDD sólo para pruebas
+=========================================
+
+01) Establecemos una URL distinta para la BBDD
+
+Porejemplo, crea el fichero /src/test/resources/db-test.properties con el siguiente contenido
+spring.datasource.url=jdbc:mysql://localhost:3306/country-test
+
+02) Se define la ruta en el test
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@TestPropertySource(locations = "classpath:db-test.properties")
+public class CountryServiceTest {
+
+Más info en
+https://danielme.com/2018/11/26/testing-en-spring-boot-con-junit-45-mockito-mockmvc-rest-assured-bases-de-datos-embebidas/
+
+
+==============================
+Cambios de Junit 4 a Junit 5
+=============================
+Spring 5 da soporte para Junit5
+
+En el siguiente articulo revisa la parte de Junit 5 (a 1/3 del final)
+https://danielme.com/2018/11/26/testing-en-spring-boot-con-junit-45-mockito-mockmvc-rest-assured-bases-de-datos-embebidas/

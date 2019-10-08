@@ -19,12 +19,12 @@ public class Controller {
 			switch (n) {
 			case 1:
 
-				Service.addBook(Menu.readBook());
+				Service.addBook();
 
 				break;
 			case 2:
 
-				Service.addDisk(Menu.readDisk());
+				Service.addDisk();
 
 				break;
 
@@ -36,7 +36,7 @@ public class Controller {
 
 			case 4:
 				
-				Service.publicationsBefore(Writer.readDate());
+				Service.publicationsBefore();
 
 				break;
 
