@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<img th:src="${img}" />
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>URL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="kitty : ${kittyList}">
+				<td th:text="${kitty.id}">Id:</td>
+				<td th:text="${kitty.name}">Nombre:</td>
+				<td th:text="${kitty.url}">URL:</td>
+				<td> <a th:href="@{edit(id=${kitty.id})}">Modificar</a> | <a
+					th:href="@{delete(id=${kitty.id})}">Eliminar</a></td>
+			</tr>
+		</tbody>
+		
+		<p>
+			<a href="new">Haz clic para crear un NUEVO GATO</a> 
+		</p>
+	</table>
+</body>
+</html>

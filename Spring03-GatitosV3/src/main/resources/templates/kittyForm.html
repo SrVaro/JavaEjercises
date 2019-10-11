@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KITTY FORM</title>
+</head>
+<body>
+	<div align="center">
+		<h1>KITTY FORM (add/edit)</h1>
+		<table>
+			<form action="#" th:action="save" th:object="${kitty}" method="post">
+				<tr>x
+					<td><input type="hidden" th:field="${kitty.id}" /></td>
+				</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="${kitty.name}" /></td>
+			</tr>
+			<tr>
+				<td>URL:</td>
+				<td><input type="text" th:field="${kitty.url}" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit"
+					value="Guardar Registro" /></td>
+			</tr>
+			</form>
+		</table>
+	</div>
+
+</body>
+</html>
