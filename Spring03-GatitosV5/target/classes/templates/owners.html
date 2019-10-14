@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<ul th:each="owner : ${ownerList}">
+		<li th:text="${owner.id}">
+			
+		</li>
+		<p th:text="${owner.name}"> </p>
+		
+		<ul th:each="kitty : ${owner.kittys}">
+			<li th:text="${kitty.id}">Id:</li>
+			<p th:text="${kitty.name}">Nombre:</p>
+			<p th:text="${kitty.name}">Nombre:</p>
+		</ul>
+	</ul>
+</body>
+</html>
