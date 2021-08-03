@@ -12,8 +12,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<springframework.version>4.3.8.RELEASE</springframework.version>
-		<jackson-version>2.10.0</jackson-version>
+		<springframework.version>5.2.0.RELEASE</springframework.version>
+		<jackson-version>2.5.2</jackson-version>
 	</properties>
 
 	<dependencies>
